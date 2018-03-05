@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+  "name": "LinkedIn To CSV",
+  "short_name": "LinkedIn2CSV",
+  "version": "0.4",
+
+  "description": "Export LinkedIn contact to CSV",
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ],
+
+  "icons": {
+    "16": "/assets/csv-icon-16.png",
+    "24": "/assets/csv-icon-24.png",
+    "48": "/assets/csv-icon-48.png",
+    "64": "/assets/csv-icon-64.png",
+    "128": "/assets/csv-icon-128.png"
+  },
+
+  "browser_action": {
+    "default_icon" : {
+        "19": "/assets/csv-icon-16.png",
+        "38": "/assets/csv-icon-32.png"
+      },
+    "default_title": "LinkedIn2CSV",
+    "default_popup": "popup.html"
+  },
+
+  "author": "Alberto Villa",
+
+  "content_scripts": [{
+    "matches": ["https://*.linkedin.com/profile/*", "https://*.linkedin.com/in/*"],
+    "js": ["jquery-1.11.3.min.js", "main.js"]
+  }]
+
+}
